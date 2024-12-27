@@ -25,6 +25,28 @@ EXPOSE 5000
 
 # Запускаем приложение
 CMD ["python","sabrekovspobot.py"]
-
+```
 Затем, мы запускаем терминал в pycharm и вводим команду docker build -t telegrambot:1.0 ./
-![image](https://github.com/user-attachments/assets/22490d11-3e4c-42dd-b24a-344c95c1181d)
+Готовый образ:
+![image](https://github.com/EduardSabr/DZ_SPO_2/blob/main/1d.png?raw=true)
+## Создание и запуск контейнера
+Создаем и запускаем контейнер командой `docker run -p 8888:5000 0d37c7b91bbc`
+`docker run` запускает контейнер, далее идет флаг `-p`, который принимает параметры [HOST_PORT]:[CONTAINER_PORT],
+соответственно порт хоста, который мы как раз можем менять (нужно чтобы он был свободен) и порт контейнера,
+на который будет пробрасываться.
+
+После запуска контейнера можем открыть бота в телеграмме `@SPOSabrekov_Bot`.
+
+Я пользовался Docker Desktop, поэтому контейнер могу запускать оттуда.
+Запущенный контейнер:
+![image](https://github.com/EduardSabr/DZ_SPO_2/blob/main/2d.png?raw=true)
+
+Работа бота в телеграме:
+![image](https://github.com/user-attachments/assets/23c09e02-0791-4078-881c-886b6cdcd45c)
+![image](https://github.com/user-attachments/assets/33b2a054-4a8f-4885-8f88-408fc0874462)
+
+Логи в Docker Desktop:
+![image](https://github.com/EduardSabr/DZ_SPO_2/blob/main/5d.png?raw=true)
+Также в Docker Desktop можно посмотреть процент использования CPU и RAM. 
+## Указывать порт и localhost в моем случае не нужно, так как страницы, на которую ведет порт, не существует.
+## Код программы, докер-файл представлены в репозитории
